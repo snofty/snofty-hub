@@ -3,15 +3,16 @@
 Simple java + rest + mongodb + maven application.
 
 Using below technologies/frameworks:
-
-java-1.8.0_121
-MongoDB-3.4.2
-Rest with Jersey-2.17
-gson-2.8.0
-maven-3.3.9
+<table>
+<tr><td>java-1.8.0_121</td></tr>
+<tr><td>MongoDB-3.4.2</td></tr>
+<tr><td>Rest with Jersey-2.17</td></tr>
+<tr><td>gson-2.8.0</td></tr>
+<tr><td>maven-3.3.9</td></tr>
+</table>
 
 Implemented with custom logger API
-
+<pre>
 API available are:
 URI (POST) : http://localhost:8080/myfirstApp/snofty/MM/createTransaction/
 Input (JSON): 
@@ -32,7 +33,7 @@ Output (JSON):
   "bank": "HDFC",
   "category": "Provisions"
 }
-
+</pre>
 URI (GET): http://localhost:8080/myfirstApp/snofty/MM/getTransactions
 Output (JSON) :
 [
