@@ -3,8 +3,8 @@ package com.snofty.common.log.service;
 import org.bson.Document;
 
 import com.mongodb.client.MongoCursor;
+import com.snofty.mm.db.service.MMDBService;
 import com.snofty.mm.exception.MMDBException;
-import com.snofty.mm.service.MMDBService;
 
 public class SnoftyLoggerService {
 
