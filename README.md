@@ -1,4 +1,4 @@
-								It an MoneyManagement API to track the spendings.
+					It an MoneyManagement API to track the spendings.
 
 Using below technologies/frameworks:
 
