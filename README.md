@@ -1,5 +1,8 @@
 					It an MoneyManagement API to track the spendings.
 					
+<p align="center">
+  <img src="/src/main/resources/images/homeImage.jpg"/>
+</p>
 Simple java + rest + mongodb + maven application.
 
 Using below technologies/frameworks:
