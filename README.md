@@ -33,7 +33,7 @@ Output (JSON):
   "bank": "HDFC",
   "category": "Provisions"
 }
-</pre>
+
 URI (GET): http://localhost:8080/myfirstApp/snofty/MM/getTransactions
 Output (JSON) :
 [
@@ -54,3 +54,4 @@ Output (JSON) :
     "category": "Provisions"
   }
 ]
+</pre>
