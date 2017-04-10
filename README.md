@@ -4,11 +4,11 @@ Simple java + rest + mongodb + maven application.
 
 Using below technologies/frameworks:
 <table>
-<tr><td>java-1.8.0_121</td></tr>
-<tr><td>MongoDB-3.4.2</td></tr>
-<tr><td>Rest with Jersey-2.17</td></tr>
-<tr><td>gson-2.8.0</td></tr>
-<tr><td>maven-3.3.9</td></tr>
+<tr><td><a href="http://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html">java-1.8.0_121</a></td></tr>
+<tr><td><a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/">MongoDB-3.4.2</a></td></tr>
+<tr><td><a href="https://jersey.java.net/">Rest with Jersey-2.17</a></td></tr>
+<tr><td><a href="https://en.wikipedia.org/wiki/Gson">gson-2.8.0</a></td></tr>
+<tr><td><a href="https://maven.apache.org/download.cgi">maven-3.3.9</a></td></tr>
 </table>
 
 Implemented with custom logger API
