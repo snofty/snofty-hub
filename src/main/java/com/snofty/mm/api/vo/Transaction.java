@@ -2,7 +2,6 @@ package com.snofty.mm.api.vo;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.security.Timestamp;
 
 public class Transaction implements Serializable {
 
