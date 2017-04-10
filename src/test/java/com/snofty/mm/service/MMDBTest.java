@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.bson.Document;
 
+import com.snofty.mm.db.service.MMDBService;
 import com.snofty.mm.exception.MMDBException;
 
 public class MMDBTest {
@@ -17,11 +18,11 @@ public class MMDBTest {
 		data.put("Amount", 38415);
 		mmdbService.insertData(data);*/
 		
-		/*try {
-			new MMDBTest().insertData();
+		try {
+			new MMDBTest().displayData();
 		} catch (MMDBException e) {
 			System.err.println("DB connection failed");
-		}*/
+		}
 
 	}
 	

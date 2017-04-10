@@ -1,17 +1,22 @@
 package com.snofty.mm.api.vo;
 
+import java.io.Serializable;
+import java.math.BigDecimal;
 import java.security.Timestamp;
 
-import org.joda.money.Money;
+public class Transaction implements Serializable {
 
-public class Transaction {
-
+	private static final long serialVersionUID = -7526897394852731429L;
+	public static final String TABLE_NAME = "Transaction";
+	//private long _id;
 	private String type;
-	private Money amount;
+	private BigDecimal amount;
 	private String mode;
-	private Timestamp timestamp;
+	private long timestamp;
 	private String bank;
 	private String category;
+	
+	
 
 	public String getType() {
 		return type;
@@ -21,11 +26,11 @@ public class Transaction {
 		this.type = type;
 	}
 
-	public Money getAmount() {
+	public BigDecimal getAmount() {
 		return amount;
 	}
 
-	public void setAmount(Money amount) {
+	public void setAmount(BigDecimal amount) {
 		this.amount = amount;
 	}
 
@@ -37,11 +42,11 @@ public class Transaction {
 		this.mode = mode;
 	}
 
-	public Timestamp getTimestamp() {
+	public long getTimestamp() {
 		return timestamp;
 	}
 
-	public void setTimestamp(Timestamp timestamp) {
+	public void setTimestamp(long timestamp) {
 		this.timestamp = timestamp;
 	}
 

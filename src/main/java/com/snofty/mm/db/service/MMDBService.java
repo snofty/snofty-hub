@@ -22,6 +22,7 @@ public class MMDBService {
 		}
 	}
 
+	@Deprecated
 	public boolean insertData(Map<String, Object> data) {
 		boolean isSuccess = false;
 		mMDBConnector.getCollection("test").insertOne(new Document(data));
@@ -34,7 +35,7 @@ public class MMDBService {
 			getCollection(table).insertOne(new Document(data));
 			isSuccess = true;
 		} catch (Exception e) {
-			throw new MMDBException(e, "insertData failed");
+			throw new MMDBException(e.getMessage());
 		}
 		return isSuccess;
 	}
@@ -43,7 +44,7 @@ public class MMDBService {
 		try {
 			return getCollection(table).find(query).iterator();
 		} catch (Exception e) {
-			throw new MMDBException(e, "getData failed");
+			throw new MMDBException(e);
 		}
 	}
 
@@ -59,7 +60,7 @@ public class MMDBService {
 			}
 			return query.projection(projection).iterator();
 		} catch (Exception e) {
-			throw new MMDBException(e, "getData failed");
+			throw new MMDBException(e);
 		}
 	}
 }

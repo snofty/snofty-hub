@@ -3,10 +3,11 @@ package com.snofty.common.log;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
-import java.io.Writer;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import com.snofty.common.log.service.SnoftyLoggerService;
 
@@ -33,17 +34,15 @@ public final class SnoftyLogger {
 	}
 
 	private void doWrite(Object message, boolean isError) {
-		Writer writer = getWriter();
+		PrintWriter writer = getWriter();
 		if (writer != null) {
 			try {
 				if (message instanceof String) {
-					writer.write((String) message);
+					writer.println((String) message);
 				} else {
-					writer.write(message.toString());
+					writer.println(message.toString());
 				}
 				writer.flush();
-			} catch (IOException e) {
-				writeToDefault(message, isError);
 			} finally {
 				try {
 					writer.close();
@@ -63,9 +62,10 @@ public final class SnoftyLogger {
 		}
 	}
 
-	private Writer getWriter() {
+	private PrintWriter getWriter() {
 		try {
-			Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(getFilePath()), "utf-8"));
+			PrintWriter writer = new PrintWriter(
+					new BufferedWriter(new OutputStreamWriter(new FileOutputStream(getFilePath(), true), "utf-8")));
 			return writer;
 		} catch (UnsupportedEncodingException | FileNotFoundException e) {
 			System.err.println(e.getMessage());
@@ -85,6 +85,11 @@ public final class SnoftyLogger {
 	}
 
 	private String prefix() {
-		return glass.getSimpleName() + "@" + System.currentTimeMillis() + "~  ";
+		return glass.getSimpleName() + "@" + getCurrentLocalDateTimeStamp() + "~  ";
+	}
+	
+	private String getCurrentLocalDateTimeStamp() {
+	    return LocalDateTime.now()
+	       .format(DateTimeFormatter.ofPattern("dd,MMM yyyy HH:mm:ss.SSS"));
 	}
 }

@@ -1,6 +1,7 @@
 package com.snofty.mm.util;
 
 import java.util.Arrays;
+import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.locks.Lock;
@@ -22,6 +23,7 @@ public final class MMDBConnector {
 	private static final String DATABASE_NAME = "test";
 	private static final int DEFAULT_DB_CACHE_COUNT = 5;
 	private int connectionId;
+	private static final ConfigurationsHolder HOLDER=ConfigurationsHolder.getConfigurationsHolder();
 
 	private final MongoClient mongoClient;
 	private final MongoDatabase database;
@@ -29,6 +31,8 @@ public final class MMDBConnector {
 
 	private MMDBConnector() throws MMDBException {
 		try {
+			Properties properties = HOLDER.getProperties();
+			System.out.println(properties.getProperty("mm.snofty.db.hostname"));
 			MongoCredential credential = MongoCredential.createCredential("Snofty", DATABASE_NAME,
 					"login@Snofty".toCharArray());
 			mongoClient = new MongoClient(new ServerAddress(DB_HOSTNAME, PORT), Arrays.asList(credential));
