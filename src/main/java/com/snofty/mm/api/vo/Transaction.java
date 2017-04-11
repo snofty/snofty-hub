@@ -3,6 +3,8 @@ package com.snofty.mm.api.vo;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+import com.snofty.common.GsonCompatibleDate;
+
 public class Transaction implements Serializable {
 
 	private static final long serialVersionUID = -7526897394852731429L;
@@ -14,8 +16,15 @@ public class Transaction implements Serializable {
 	private long timestamp;
 	private String bank;
 	private String category;
+	private GsonCompatibleDate insertedAt;
 	
-	
+	public GsonCompatibleDate getInsertedAt() {
+		return insertedAt;
+	}
+
+	public void setInsertedAt(GsonCompatibleDate insertedAt) {
+		this.insertedAt = insertedAt;
+	}
 
 	public String getType() {
 		return type;
